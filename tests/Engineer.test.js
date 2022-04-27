@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer");
 
-describe("Employee class", () => {
+describe("Engineer class", () => {
   it("should return the employee github username when called", () => {
     const name = "John";
     const id = 36;
