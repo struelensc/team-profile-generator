@@ -133,14 +133,14 @@ function engineerQuestions() {
 function wrapHTML(section) {
   if (section === "start") {
     let html = startHtml();
-    fs.writeFile("index.html", html, (err) => {
+    fs.writeFile("./generated-documents/index.html", html, (err) => {
       if (err) {
         console.log(err);
       }
     });
   } else if (section === "end") {
     let html = endHtml();
-    fs.appendFile("index.html", html, (err) =>
+    fs.appendFile("./generated-documents/index.html", html, (err) =>
       err ? console.log(err) : console.log("Successfully finished team!")
     );
   }
@@ -148,7 +148,7 @@ function wrapHTML(section) {
 
 // Appends new team members to html document
 function writeToFile(html) {
-  fs.appendFile("index.html", html, (err) => {
+  fs.appendFile("./generated-documents/index.html", html, (err) => {
     if (err) {
       console.log(err);
     }
