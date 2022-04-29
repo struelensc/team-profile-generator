@@ -9,19 +9,19 @@ function engineerHtml(data) {
       alt="gear icon representing web development"
       class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
     />
-    <h5 class="mb-0">${data.name}</h5>
+    <h5 class="mb-0">${data.engineerName}</h5>
     <p class="text-uppercase text-muted">Engineer</p>
-    <p class="small text-uppercase text-muted">ID: ${data.id}</p>
+    <p class="small text-uppercase text-muted">ID: ${data.engineerID}</p>
     <ul class="social list-inline mb-0 mt-3">
       <li class="list-inline-item">
         <!-- Email -->
-        <a href="mailto:${data.email}" class="icon"
+        <a href="mailto:${data.engineerEmail}" class="icon"
           ><i class="fa fa-envelope"></i
         ></a>
       </li>
       <!-- Github -->
       <li class="list-inline-item">
-        <a href="https://github.com/${data.github}" class="icon"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/${data.engineerGithub}" class="icon"><i class="fa fa-github"></i></a>
       </li>
     </ul>
   </div>

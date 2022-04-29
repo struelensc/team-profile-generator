@@ -7,14 +7,14 @@ function managerHtml(data) {
       alt="gear icon representing web development"
       class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
     />
-    <h5 class="mb-0">${data.name}</h5>
+    <h5 class="mb-0">${data.managerName}</h5>
     <p class="text-uppercase text-muted">Manager</p>
-    <p class="small text-uppercase text-muted mb-0">ID: ${data.id}</p>
-    <p class="small text-uppercase text-muted">Office Number: 1</p>
+    <p class="small text-uppercase text-muted mb-0">ID: ${data.managerID}</p>
+    <p class="small text-uppercase text-muted">Office Number: ${data.managerOffice}</p>
     <ul class="social list-inline mb-0 mt-3">
       <li class="list-inline-item">
         <!-- Email -->
-        <a href="mailto:${data.email}" class="icon"
+        <a href="mailto:${data.managerEmail}" class="icon"
           ><i class="fa fa-envelope"></i
         ></a>
       </li>

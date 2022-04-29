@@ -1,5 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const {
+  generateManager,
+  generateIntern,
+  generateEngineer,
+} = require("./dist/generateHTML");
 
 function init() {
   const managerQuestions = [
@@ -27,7 +32,8 @@ function init() {
 
   inquirer.prompt(managerQuestions).then((data) => {
     console.log(data);
-    // generateManager(data);
+    const managerHTML = generateManager(data);
+    writeToFile(managerHTML);
     choices();
   });
 }
@@ -80,7 +86,7 @@ function internQuestions() {
 
   inquirer.prompt(internChoices).then((data) => {
     console.log(data);
-    // generateIntern(data);
+    const internHTML = generateIntern(data);
     choices();
   });
 }
@@ -111,9 +117,13 @@ function engineerQuestions() {
 
   inquirer.prompt(engineerQuestions).then((data) => {
     console.log(data);
-    // generateEngineer(data);
+    const engineerHTML = generateEngineer(data);
     choices();
   });
+}
+
+function writeToFile(html) {
+  console.log(html);
 }
 
 init();

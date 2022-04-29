@@ -7,16 +7,16 @@ function internHTML(data) {
       alt="gear icon representing web development"
       class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
     />
-    <h5 class="mb-0">${data.name}</h5>
+    <h5 class="mb-0">${data.InternName}</h5>
     <p class="text-uppercase text-muted">Intern</p>
-    <p class="small text-uppercase text-muted mb-0">ID: ${data.id}</p>
+    <p class="small text-uppercase text-muted mb-0">ID: ${data.InternID}</p>
     <p class="small text-uppercase text-muted">
-      School: ${data.school}
+      School: ${data.InternSchool}
     </p>
     <ul class="social list-inline mb-0 mt-3">
       <li class="list-inline-item">
         <!-- Email -->
-        <a href="mailto:${data.email}" class="icon"
+        <a href="mailto:${data.InternEmail}" class="icon"
           ><i class="fa fa-envelope"></i
         ></a>
       </li>
@@ -27,4 +27,4 @@ function internHTML(data) {
 `;
 }
 
-module.exports = internHtml;
+module.exports = internHTML;
