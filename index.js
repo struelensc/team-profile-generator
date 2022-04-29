@@ -5,7 +5,10 @@ const {
   generateIntern,
   generateEngineer,
 } = require("./dist/generateHTML");
+const startHtml = require("./src/start-html");
+const endHtml = require("./src/end-html");
 
+// Initial manager questions
 function init() {
   const managerQuestions = [
     {
@@ -31,13 +34,16 @@ function init() {
   ];
 
   inquirer.prompt(managerQuestions).then((data) => {
-    console.log(data);
+    wrapHTML("start");
+
     const managerHTML = generateManager(data);
     writeToFile(managerHTML);
+
     choices();
   });
 }
 
+// What kind of team member to add or finish building team
 function choices() {
   const teamChoices = [
     {
@@ -49,17 +55,17 @@ function choices() {
   ];
 
   inquirer.prompt(teamChoices).then((data) => {
-    console.log(data.teamChoice);
     if (data.teamChoice === "Intern") {
       internQuestions();
     } else if (data.teamChoice === "Engineer") {
       engineerQuestions();
     } else {
-      return;
+      wrapHTML("end");
     }
   });
 }
 
+// Questions for building an intern html snippet
 function internQuestions() {
   const internChoices = [
     {
@@ -85,12 +91,13 @@ function internQuestions() {
   ];
 
   inquirer.prompt(internChoices).then((data) => {
-    console.log(data);
     const internHTML = generateIntern(data);
+    writeToFile(internHTML);
     choices();
   });
 }
 
+// Questions for building an engineer html snippet
 function engineerQuestions() {
   const engineerQuestions = [
     {
@@ -116,14 +123,37 @@ function engineerQuestions() {
   ];
 
   inquirer.prompt(engineerQuestions).then((data) => {
-    console.log(data);
     const engineerHTML = generateEngineer(data);
+    writeToFile(engineerHTML);
     choices();
   });
 }
 
-function writeToFile(html) {
-  console.log(html);
+// Starting and ending the html document
+function wrapHTML(section) {
+  if (section === "start") {
+    let html = startHtml();
+    fs.writeFile("index.html", html, (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
+  } else if (section === "end") {
+    let html = endHtml();
+    fs.appendFile("index.html", html, (err) =>
+      err ? console.log(err) : console.log("Successfully finished team!")
+    );
+  }
 }
 
+// Appends new team members to html document
+function writeToFile(html) {
+  fs.appendFile("index.html", html, (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
+
+// Starts application
 init();

@@ -1,4 +1,5 @@
-const mainHtml = `
+function endHtml() {
+  return `
         </div>
       </main>
     </div>
@@ -6,5 +7,6 @@ const mainHtml = `
 </html>
 
 `;
+}
 
-module.exports = mainHtml;
+module.exports = endHtml;

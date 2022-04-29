@@ -1,4 +1,5 @@
-const mainHtml = `<!DOCTYPE html>
+function startHtml() {
+  return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,5 +30,6 @@ const mainHtml = `<!DOCTYPE html>
         <div class="row text-center">
 
 `;
+}
 
-module.exports = mainHtml;
+module.exports = startHtml;
