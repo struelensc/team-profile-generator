@@ -1,4 +1,5 @@
-const internHtml = `<!-- Intern team item-->
+function internHTML(data) {
+  return `<!-- Intern team item-->
 <div class="col-xl-3 col-sm-6 mb-5">
   <div class="bg-white rounded shadow-sm py-5 px-4">
     <img
@@ -6,16 +7,16 @@ const internHtml = `<!-- Intern team item-->
       alt="gear icon representing web development"
       class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
     />
-    <h5 class="mb-0">Courtney</h5>
+    <h5 class="mb-0">${data.name}</h5>
     <p class="text-uppercase text-muted">Intern</p>
-    <p class="small text-uppercase text-muted mb-0">ID: 1</p>
+    <p class="small text-uppercase text-muted mb-0">ID: ${data.id}</p>
     <p class="small text-uppercase text-muted">
-      School: Best University
+      School: ${data.school}
     </p>
     <ul class="social list-inline mb-0 mt-3">
       <li class="list-inline-item">
         <!-- Email -->
-        <a href="mailto:" class="icon"
+        <a href="mailto:${data.email}" class="icon"
           ><i class="fa fa-envelope"></i
         ></a>
       </li>
@@ -24,5 +25,6 @@ const internHtml = `<!-- Intern team item-->
 </div>
 <!-- End-->
 `;
+}
 
 module.exports = internHtml;
