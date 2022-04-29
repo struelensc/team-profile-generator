@@ -7,6 +7,7 @@ const {
 } = require("./dist/generateHTML");
 const startHtml = require("./src/start-html");
 const endHtml = require("./src/end-html");
+const css = require("./src/css");
 
 // Initial manager questions
 function init() {
@@ -133,7 +134,13 @@ function engineerQuestions() {
 function wrapHTML(section) {
   if (section === "start") {
     let html = startHtml();
+    let cssText = css();
     fs.writeFile("./generated-documents/index.html", html, (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
+    fs.writeFile("./generated-documents/style.css", cssText, (err) => {
       if (err) {
         console.log(err);
       }

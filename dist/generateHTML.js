@@ -18,7 +18,7 @@ function generateIntern(data) {
     data.internName,
     data.internID,
     data.internEmail,
-    data.internOffice
+    data.internSchool
   );
 
   return newIntern.html();
