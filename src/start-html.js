@@ -27,12 +27,6 @@ const mainHtml = `<!DOCTYPE html>
 
       <main>
         <div class="row text-center">
-        
-        </div>
-      </main>
-    </div>
-  </body>
-</html>
 
 `;
 
